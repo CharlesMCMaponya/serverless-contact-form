@@ -1,0 +1,3 @@
+Project developed by Charles Maponya
+GitHub: https://github.com/CharlesMaponya
+AWS Region: af-south-1 (Johannesburg)

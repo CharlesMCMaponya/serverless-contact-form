@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form - Developed by Charles Maponya</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      max-width: 600px; 
+      margin: 0 auto; 
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #007749; /* SA green */
+      text-align: center;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    button {
+      background: #DE3831; /* SA red */
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #c5302a;
+    }
+    .watermark {
+      text-align: center;
+      margin-top: 30px;
+      color: #666;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <div class="watermark">
+    Developed by Charles Maponya using AWS Serverless
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const formData = {
+        name: form.name.value,
+        email: form.email.value,
+        message: form.message.value
+      };
+      
+      try {
+        const response = await fetch('YOUR_API_ENDPOINT_HERE/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        if (result.isSpam) {
+          alert(' Your message was flagged as spam. Please try again with different content.');
+        } else {
+          alert(' Thank you for your message! We will contact you soon.');
+          form.reset();
+        }
+      } catch (error) {
+        alert(' Error submitting form. Please try again later.');
+      }
+    });
+  </script>
+</body>
+</html

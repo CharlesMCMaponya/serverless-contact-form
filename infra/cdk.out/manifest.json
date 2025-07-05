@@ -1,0 +1,173 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "InfraStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "InfraStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "InfraStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/af-south-1",
+      "properties": {
+        "templateFile": "InfraStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-af-south-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-af-south-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-af-south-1/d2a6ec24b81b37b9f4dcb781d85a23db27cac093e9e1621e23a926ccbd39db2a.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "InfraStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-af-south-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "InfraStack.assets"
+      ],
+      "metadata": {
+        "/InfraStack/ContactsTable/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactsTableD21ED2A6"
+          }
+        ],
+        "/InfraStack/FormHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FormHandlerServiceRole5D3B23CB"
+          }
+        ],
+        "/InfraStack/FormHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FormHandlerServiceRoleDefaultPolicy4C6D10EE"
+          }
+        ],
+        "/InfraStack/FormHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FormHandlerF26113DD"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApi40A2140B"
+          }
+        ],
+        "/InfraStack/ContactFormApi/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApiCloudWatchRoleCF194B0E"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApiAccount34F254FB"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApiDeploymentE01F9BF6d4a073b81b40dd6c47497ac46599f244"
+          }
+        ],
+        "/InfraStack/ContactFormApi/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApiDeploymentStageprod4DC87B97"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApiEndpoint4C2C6CB5"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Default/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApiOPTIONS7502F1FC"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Default/submit/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApisubmitAAD963A2"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Default/submit/OPTIONS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApisubmitOPTIONS9DF30D11"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Default/submit/POST/ApiPermission.InfraStackContactFormApiD3878EC0.POST..submit": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApisubmitPOSTApiPermissionInfraStackContactFormApiD3878EC0POSTsubmit9E2175D7"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Default/submit/POST/ApiPermission.Test.InfraStackContactFormApiD3878EC0.POST..submit": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApisubmitPOSTApiPermissionTestInfraStackContactFormApiD3878EC0POSTsubmit08140E18"
+          }
+        ],
+        "/InfraStack/ContactFormApi/Default/submit/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ContactFormApisubmitPOSTC512D543"
+          }
+        ],
+        "/InfraStack/ApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiEndpoint"
+          }
+        ],
+        "/InfraStack/DeveloperCredit": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeveloperCredit"
+          }
+        ],
+        "/InfraStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/InfraStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/InfraStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "InfraStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
